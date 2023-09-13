@@ -18,31 +18,49 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  class="form-control"
+                  placeholder="type a city..."
+                  id="city-input"
+                  autocomplete="off"
+               />
+              </div>
+              <div class="col-3">
+                <input type="Submit" value="search" class="btn btn-primary w-100">
+              </div>
+              
+            </div>
+            
+          </form>
           <h1 id="city"></h1>
           <ul>
-            <li> Last updated at <span id="date"></span></li>
+            <li>Last updated at <span id="date"></span></li>
             <li id="description"></li>
           </ul>
           <div class="row">
             <div class="col-6">
-                <div class="d-flex weather-temperature">
-                        <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAQBJREFUaN7t2csNwyAMBmBGYYSMwhgdgxEYjRW6ARu4HNyqB0CKednElf5b2/hLSALGAICRHKMABSjgUMDdD7xfLifkxByoJOJ33O3/nwHIhVgsKDWKriXhb+0WQD6wJxZegvhlADzrcUDhpeFlpwLyAa5BZ711Na4pgAXFNxFdABw2K4r/R9iRgLiw+N89MQSATxvYFN8F2DB0qkOJCggbi/8m9AASA0AiAXBuA0ziKIDACBAogMgIECkAYBUFKEABzwOIf4yKf5HJnkqIn8wxmk775y5oxC8pj1jUH9FWEd/YOqK1eERz94j2euFqUCF7NzjYbzHpLqUCFKCAJfkAq7RimK7qUtAAAAAASUVORK5CYII="
-                    alt="clear"
-                    id="icon"
-                    />
-                    <div>
-                        <strong id="temperature">25</strong>
-                        <span class="units">°C | <a href="#">°F</a> </span>
-                    </div>  
-                </div>        
+              <div class="d-flex weather-temperature">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAQBJREFUaN7t2csNwyAMBmBGYYSMwhgdgxEYjRW6ARu4HNyqB0CKednElf5b2/hLSALGAICRHKMABSjgUMDdD7xfLifkxByoJOJ33O3/nwHIhVgsKDWKriXhb+0WQD6wJxZegvhlADzrcUDhpeFlpwLyAa5BZ711Na4pgAXFNxFdABw2K4r/R9iRgLiw+N89MQSATxvYFN8F2DB0qkOJCggbi/8m9AASA0AiAXBuA0ziKIDACBAogMgIECkAYBUFKEABzwOIf4yKf5HJnkqIn8wxmk775y5oxC8pj1jUH9FWEd/YOqK1eERz94j2euFqUCF7NzjYbzHpLqUCFKCAJfkAq7RimK7qUtAAAAAASUVORK5CYII="
+                  alt="clear"
+                  id="icon"
+                />
+                <div>
+                  <strong id="temperature"></strong>
+                  <span class="units">°C | <a href="#">°F</a> </span>
+                </div>
+              </div>
             </div>
             <div class="col-6">
-                <ul>
-                    <li>pressure: <span id="pressure"></span>;</li>
-                    <li>humidity: <span id="humidity"></span>;</li>
-                    <li>wind: <span id="wind"></span>km/h;</li>
-                </ul> 
+              <ul>
+                <li>pressure: <span id="pressure"></span>;</li>
+                <li>humidity: <span id="humidity"></span>;</li>
+                <li>wind: <span id="wind"></span>km/h;</li>
+              </ul>
             </div>
           </div>
         </div>

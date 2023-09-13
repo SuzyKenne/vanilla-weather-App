@@ -31,12 +31,23 @@ function displayTemperature(response) {
     windElement.innerHTML = Math.round(response.data.wind.speed);
     descriptionElement.innerHTML = response.data.condition.description;
     dateElement.innerHTML = formatDate(response.data.time * 1000);
-    iconElement.setAttribute ("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily.condition.icon}rain-day.png`); 
+    iconElement.setAttribute ("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`); 
 }
 
-let city = "canada";
-let Key = "430030o1b1545b06bdd75tb02bbad91f";
-let apiUrl =`https://api.shecodes.io/weather/v1/current?query=${city}&key=${Key}&units=metric`;
-console.log(apiUrl);
+function search(city) {
+    let Key = "430030o1b1545b06bdd75tb02bbad91f";
+    let apiUrl =`https://api.shecodes.io/weather/v1/current?query=${city}&key=${Key}&units=metric`;
+    console.log(apiUrl);
 
-axios.get(apiUrl).then(displayTemperature);
+    axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
+
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
