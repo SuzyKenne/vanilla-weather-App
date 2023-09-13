@@ -21,18 +21,22 @@ function displayTemperature(response) {
     let humidityElement = document.querySelector("#humidity");
     let pressureElement = document.querySelector("#pressure");
     let windElement = document.querySelector("#wind");
+    let descriptionElement = document.querySelector("#description");
     let dateElement = document.querySelector("#date");
+    let iconElement = document.querySelector("#icon");
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
     humidityElement.innerHTML = response.data.temperature.humidity;
     pressureElement.innerHTML = response.data.temperature.pressure;
     windElement.innerHTML = Math.round(response.data.wind.speed);
+    descriptionElement.innerHTML = response.data.condition.description;
     dateElement.innerHTML = formatDate(response.data.time * 1000);
+    iconElement.setAttribute ("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily.condition.icon}rain-day.png`); 
 }
 
-
+let city = "canada";
 let Key = "430030o1b1545b06bdd75tb02bbad91f";
-let apiUrl =`https://api.shecodes.io/weather/v1/current?query=Buea&key=${Key}&units=metric`;
+let apiUrl =`https://api.shecodes.io/weather/v1/current?query=${city}&key=${Key}&units=metric`;
 console.log(apiUrl);
 
 axios.get(apiUrl).then(displayTemperature);
