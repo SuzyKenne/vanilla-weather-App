@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
 }
 .weather-app-wrapper {
-    max-width: 600px;
     margin: 30px auto;
 }
 .weather-app {
@@ -34,24 +33,6 @@ h1 {
     font-weight: 100;
     line-height: 28.8px;
     margin-bottom: 0;
-}
-a {
-    text-decoration: none;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    list-style: none;
-    color: #878787;
-    font-size: 16px;
-    font-weight: 100;
-    line-height: 19px;
-    margin: 0;
-    padding: 0;
 }
 .weather-temperature .active {
     color: rgb(33, 33, 33);
